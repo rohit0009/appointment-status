@@ -1,3 +1,21 @@
-<p>
-appointment-status works!
-</p>
+<div>
+
+  <div class="label1">Scan Interval</div>
+  <div class="button-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Scan Interval</mat-label>
+      <mat-select [disabled]="isStarted" [(value)]="selectedInterval" (selectionChange)="intervalSelectionDone($event)">
+        <mat-option *ngFor="let in of intervals" [value]="in.value">
+          {{in.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br />
+  <div class="label1">Scan</div>
+  <div class="button-row">
+    <button mat-raised-button color="primary" [disabled]="isStarted" (click)="toggleScan('start')">Start Scan</button>
+    <button mat-raised-button color="warn" [disabled]="!isStarted" (click)="toggleScan('stop')">Stop Scan</button>
+  </div>
+
+</div>

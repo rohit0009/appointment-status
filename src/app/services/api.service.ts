@@ -17,7 +17,7 @@ export class ApiService {
     return this.http.get(
       `${
         this.base
-      }v2/appointment/seessions/public/calendarByDistrict?district_id=363&date=${d.getDate()}-${d.getMonth() +
+      }v2/appointment/sessions/public/calendarByDistrict?district_id=363&date=${d.getDate()}-${d.getMonth() +
         1}-${d.getFullYear()}`
     );
   }
